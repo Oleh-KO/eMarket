@@ -1,0 +1,47 @@
+<div class="container">
+  <header>
+    <img class="logo" src="assets/images/E.png">
+    <p class="title">Market</p>
+  </header>
+
+  <nav>
+    <button routerLink='' class="navBtn left" id="mainPage" type="button">
+      <img class="navImg" src="assets/images/home.svg">
+    </button>
+    <button routerLink='/bucket' class="navBtn right" id="bucket" type="button">
+      <img class="navImg" src="assets/images/ui.svg">
+    </button>
+  </nav>
+
+  <main>
+    <div class="paymentItem" *ngFor="let item of bucketArray let i = index">
+      <div class="item one">
+        <p><b>{{item?.name}}</b></p>
+        <hr class="line">
+        <p><b>Description: </b>{{item?.label}}</p>
+        <hr class="line">
+        <p><b>Price: </b>{{item?.price}} <b>&#8372;</b></p>
+        <button type="button" id="add" class="itemBtn" (click)="deleteItem(i)">Delete</button>
+      </div>
+    </div>
+    <hr class="bottomLine">
+    <p class="total">Total: {{totalPrice}}&#8372;</p>
+  </main>
+
+  <footer>
+    <div class="sectionLogo">
+      <img class="footerLogo privat" src="assets/images/privat.png">
+      <img class="footerLogo visa" src="assets/images/visa.png">
+      <img class="footerLogo paypal" src="assets/images/paypal.png">
+    </div>
+    <div class="sectionNotes">
+      <img class="ok" src="assets/images/OK.svg">
+      <div class="textBlock">
+        <p class="textA">Created by</p>
+        <p class="textB">Oleh Kosach</p>
+      </div>
+
+    </div>
+  </footer>
+
+</div>
