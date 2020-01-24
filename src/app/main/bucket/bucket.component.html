@@ -1,32 +1,43 @@
 <div class="container">
-  <header>
-    <img class="logo" src="assets/images/E.png">
-    <p class="title">Market</p>
-  </header>
+  <div class="innerContainer">
+    <header>
+      <img class="logo" src="assets/images/E.png">
+      <p class="title">Market</p>
+    </header>
 
-  <nav>
-    <button routerLink='' class="navBtn left" id="mainPage" type="button">
-      <img class="navImg" src="assets/images/home.svg">
-    </button>
-    <button routerLink='/bucket' class="navBtn right" id="bucket" type="button">
-      <img class="navImg" src="assets/images/ui.svg">
-    </button>
-  </nav>
-
-  <main>
-    <div class="paymentItem" *ngFor="let item of bucketArray let i = index">
-      <div class="item one">
-        <p><b>{{item?.name}}</b></p>
-        <hr class="line">
-        <p><b>Description: </b>{{item?.label}}</p>
-        <hr class="line">
-        <p><b>Price: </b>{{item?.price}} <b>&#8372;</b></p>
-        <button type="button" id="add" class="itemBtn" (click)="deleteItem(i)">Delete</button>
+    <nav>
+      <div class="groupRight">
+        <button routerLink='' class="navBtn left" id="mainPage" type="button">
+          <img class="navImg" src="assets/images/home.svg">
+        </button>
       </div>
-    </div>
-    <hr class="bottomLine">
-    <p class="total">Total: {{totalPrice}}&#8372;</p>
-  </main>
+      <div class="groupLeft">
+        <button routerLink='/bucket' class="navBtn right" id="bucket" type="button">
+          <img class="navImg" src="assets/images/ui.svg">
+        </button>
+        <div class="bucketStatus">
+          <p class="count">{{countItemsTwo}}</p>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <div class="itemContainer">
+        <div class="paymentItem" *ngFor="let item of bucketArray let i = index">
+          <div class="item one">
+            <p><b>{{item?.name}}</b></p>
+            <hr class="line">
+            <p><b>Description: </b>{{item?.label}}</p>
+            <hr class="line">
+            <p><b>Price: </b>{{item?.price}}<b>&#8372;</b></p>
+            <button type="button" id="add" class="itemBtn" (click)="deleteItem(i)">Delete</button>
+          </div>
+        </div>
+      </div>
+      <hr class="bottomLine">
+      <p class="total">Total: {{totalPrice}}&#8372;</p>
+    </main>
+  </div>
 
   <footer>
     <div class="sectionLogo">
@@ -40,7 +51,6 @@
         <p class="textA">Created by</p>
         <p class="textB">Oleh Kosach</p>
       </div>
-
     </div>
   </footer>
 

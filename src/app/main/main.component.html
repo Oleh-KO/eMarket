@@ -1,30 +1,39 @@
 <div class="container">
-  <header>
-    <img class="logo" src="assets/images/E.png">
-    <p class="title">Market</p>
-  </header>
+  <div class="innerContainer">
+    <header>
+      <img class="logo" src="assets/images/E.png">
+      <p class="title">Market</p>
+    </header>
 
-  <nav>
-    <button routerLink='' class="navBtn left" id="mainPage" type="button">
-      <img class="navImg" src="assets/images/home.svg">
-    </button>
-    <button routerLink='/bucket' class="navBtn right" id="bucket" type="button" (click)="getItems()">
-      <img class="navImg" src="assets/images/ui.svg">
-    </button>
-  </nav>
-
-  <main>
-    <div class="paymentItem" *ngFor="let item of itemArray let i = index">
-      <div class="item one">
-        <p><b>{{item.name}}</b></p>
-        <hr class="line">
-        <p><b>Description: </b>{{item.label}}</p>
-        <hr class="line">
-        <p><b>Price: </b>{{item.price}} <b>&#8372;</b></p>
-        <button type="button" id="add" class="itemBtn" (click)="addItem(i)">Add</button>
+    <nav>
+      <div class="groupRight">
+        <button routerLink='' class="navBtn left" id="mainPage" type="button">
+          <img class="navImg" src="assets/images/home.svg">
+        </button>
       </div>
-    </div>
-  </main>
+      <div class="groupLeft">
+        <button routerLink='/bucket' class="navBtn right" id="bucket" type="button" (click)="getItems()">
+          <img class="navImg" src="assets/images/ui.svg">
+        </button>
+        <div class="bucketStatus">
+          <p class="count">{{countItems}}</p>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <div class="paymentItem" *ngFor="let item of itemArray let i = index">
+        <div class="item one">
+          <p><b>{{item.name}}</b></p>
+          <hr class="line">
+          <p><b>Description: </b>{{item.label}}</p>
+          <hr class="line">
+          <p><b>Price: </b>{{item.price}} <b>&#8372;</b></p>
+          <button type="button" id="add" class="itemBtn" (click)="addItem(i)">Add</button>
+        </div>
+      </div>
+    </main>
+  </div>
 
   <footer>
     <div class="sectionLogo">
